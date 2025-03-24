@@ -1,7 +1,9 @@
 package com.example.todoapp
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -16,25 +18,34 @@ import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 
 @Composable
-fun DetailedScreen(navCntrl: NavController){
+fun DetailedScreen(navCntrl: NavController, name: String){
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ){
-        Text(
-            modifier = Modifier.clickable {
-                //navCntrl.popBackStack()
-                navCntrl.navigate(ScreenNav.Home.route){
-                    popUpTo(ScreenNav.Home.route){
-                        inclusive = true
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceAround
+        ){
+            Text(
+                text = name,
+                color = Color.Black
+            )
+            Text(
+                modifier = Modifier.clickable {
+                    //navCntrl.popBackStack()
+                    navCntrl.navigate(ScreenNav.Home.route){
+                        popUpTo(ScreenNav.Home.route){
+                            inclusive = true
+                        }
                     }
-                }
-            },
-            text = "Detailed Screen",
-            fontWeight = FontWeight.Bold,
-            fontSize = MaterialTheme.typography.display1.fontSize,
-            color = Color.Green
-        )
+                },
+                text = "Detailed Screen",
+                fontWeight = FontWeight.Bold,
+                fontSize = MaterialTheme.typography.display1.fontSize,
+                color = Color.Green
+            )
+        }
     }
 }
 
@@ -42,5 +53,5 @@ fun DetailedScreen(navCntrl: NavController){
 @Composable
 @Preview(showBackground = true)
 fun DetailedScreenPrev(){
-    DetailedScreen(navCntrl = rememberNavController())
+    DetailedScreen(navCntrl = rememberNavController(), name = "")
 }

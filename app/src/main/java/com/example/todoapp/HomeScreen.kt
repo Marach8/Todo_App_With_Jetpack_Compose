@@ -24,7 +24,9 @@ fun HomeScreen(navController: NavController){
         Text(
             text = "Home Screen",
             modifier = Modifier.clickable {
-                navController.navigate(route = ScreenNav.Detail.route)
+                navController.navigate(
+                    route = ScreenNav.Detail.passIdAndNo("Emmanuel Nnanna", number = 100)
+                )
             },
             fontWeight = FontWeight.Bold,
             fontSize = MaterialTheme.typography.display1.fontSize,
