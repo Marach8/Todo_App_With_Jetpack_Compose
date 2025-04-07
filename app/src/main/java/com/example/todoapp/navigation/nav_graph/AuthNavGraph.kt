@@ -6,8 +6,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import com.example.todoapp.navigation.AUTH_ROUTE
 import com.example.todoapp.navigation.Screens
-import com.example.todoapp.screens.SignInScreen
-import com.example.todoapp.screens.SignUpScreen
+import com.example.todoapp.navigation.screens.SignInScreen
+import com.example.todoapp.navigation.screens.SignUpScreen
 
 fun NavGraphBuilder.authNavGraph(
     navController: NavController

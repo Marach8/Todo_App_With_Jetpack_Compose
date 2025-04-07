@@ -10,8 +10,8 @@ import com.example.todoapp.navigation.DETAIL_PARAM
 import com.example.todoapp.navigation.HOME_ROUTE
 import com.example.todoapp.navigation.NUMBER_PARAM
 import com.example.todoapp.navigation.Screens
-import com.example.todoapp.screens.DetailedScreen
-import com.example.todoapp.screens.HomeScreen
+import com.example.todoapp.navigation.screens.DetailedScreen
+import com.example.todoapp.navigation.screens.HomeScreen
 
 fun NavGraphBuilder.homeNavGraph(
     navController: NavController

@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.rememberNavController
+import com.example.todoapp.bottom_navigation_bar.screens.MainScreen
 import com.example.todoapp.navigation.nav_graph.SetUpNavGraph
 import com.example.todoapp.ui.theme.TodoAppTheme
 
@@ -16,8 +17,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TodoAppTheme {
-                val navController = rememberNavController()
-                SetUpNavGraph(navController = navController)
+                MainScreen()
+//                val navController = rememberNavController()
+//                SetUpNavGraph(navController = navController)
 //                Column(
 //                    modifier = Modifier
 //                        .fillMaxSize(),
