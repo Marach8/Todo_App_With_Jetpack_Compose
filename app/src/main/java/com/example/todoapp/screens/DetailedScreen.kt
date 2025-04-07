@@ -1,4 +1,4 @@
-package com.example.todoapp
+package com.example.todoapp.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -11,11 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
+import com.example.todoapp.navigation.Screens
 
 @Composable
 fun DetailedScreen(navCntrl: NavController, name: String){
@@ -33,14 +33,14 @@ fun DetailedScreen(navCntrl: NavController, name: String){
             )
             Text(
                 modifier = Modifier.clickable {
-                    //navCntrl.popBackStack()
-                    navCntrl.navigate(ScreenNav.Home.route){
-                        popUpTo(ScreenNav.Home.route){
-                            inclusive = true
-                        }
-                    }
+                    navCntrl.popBackStack()
+//                    navCntrl.navigate(Screens.Home.route){
+//                        popUpTo(Screens.Home.route){
+//                            inclusive = true
+//                        }
+//                    }
                 },
-                text = "Detailed Screen",
+                text = "$name in Detailed screen",
                 fontWeight = FontWeight.Bold,
                 fontSize = MaterialTheme.typography.display1.fontSize,
                 color = Color.Green
