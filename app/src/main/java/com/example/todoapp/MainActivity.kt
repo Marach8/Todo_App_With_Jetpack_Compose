@@ -4,20 +4,25 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.navigation.compose.rememberNavController
 import com.example.todoapp.bottom_navigation_bar.screens.MainScreen
 import com.example.todoapp.navigation.nav_graph.SetUpNavGraph
+import com.example.todoapp.topappbar.AppBarScreen
+import com.example.todoapp.topappbar.MainViewModel
 import com.example.todoapp.ui.theme.TodoAppTheme
 
 class MainActivity : ComponentActivity() {
 //    lateinit var navController: NavHostController
+    private val viewModel : MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             TodoAppTheme {
-                MainScreen()
+                AppBarScreen(viewModel = viewModel)
+//                MainScreen()
 //                val navController = rememberNavController()
 //                SetUpNavGraph(navController = navController)
 //                Column(
