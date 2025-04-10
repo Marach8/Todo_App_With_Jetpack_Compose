@@ -6,9 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.Column
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.todoapp.animated_shimmer.AnimatedShimmer
+import com.example.todoapp.animated_splash_screen.NavGraphSetup
 import com.example.todoapp.bottom_navigation_bar.screens.MainScreen
+import com.example.todoapp.circular_Image.CircularImageScreen
 import com.example.todoapp.navigation.nav_graph.SetUpNavGraph
 import com.example.todoapp.topappbar.AppBarScreen
 import com.example.todoapp.topappbar.MainViewModel
@@ -16,19 +19,22 @@ import com.example.todoapp.ui.theme.TodoAppTheme
 
 class MainActivity : ComponentActivity() {
     //late init var navController: NavHostController
-    //val navController = rememberNavController()
+
     //private val viewModel : MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            val navController = rememberNavController()
             TodoAppTheme {
-                Column(){
-                    repeat(10){
-                        AnimatedShimmer()
-                    }
-                }
+                NavGraphSetup(navController = navController)
+                //CircularImageScreen()
+//                Column(){
+//                    repeat(10){
+//                        AnimatedShimmer()
+//                    }
+//                }
                 //AppBarScreen(viewModel = viewModel)
 //                MainScreen()
 //                SetUpNavGraph(navController = navController)
